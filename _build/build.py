@@ -212,7 +212,7 @@ def lead_form(prefix, default_type="Enquiry", in_modal=True, submit_label="Submi
   <input type="hidden" name="form_type" value="{default_type}">
   <div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
   <div class="form-grid">
-    <div class="field full">
+    <div class="field full field--name">
       <label for="{prefix}-name">Full name <span class="req">*</span></label>
       <input id="{prefix}-name" name="name" type="text" autocomplete="name" placeholder="Your full name" required>
       <span class="field__error" role="alert"></span>
@@ -227,10 +227,10 @@ def lead_form(prefix, default_type="Enquiry", in_modal=True, submit_label="Submi
       <input id="{prefix}-email" name="email" type="email" autocomplete="email" placeholder="you@example.com">
       <span class="field__error" role="alert"></span>
     </div>
-    <div class="field full optional-field">
+    <div class="field full optional-field field--project">
       <label for="{prefix}-project">Interested in</label>
       <select id="{prefix}-project" name="project">
-        <option value="{LUXORA}">Vatika Luxora — Kasara (Ongoing)</option>
+        <option value="{LUXORA}">Vatika Luxora (Ongoing)</option>
         <option value="Completed project (resale / information)">Completed projects</option>
         <option value="General enquiry">General enquiry</option>
       </select>
