@@ -195,15 +195,8 @@ def header(active):
     {nav_link("gallery.html", "Gallery", "gallery", active)}
     {nav_link("contact.html", "Contact Us", "contact", active)}
   </ul>
-  <div class="drawer__contact">
-    <h3>Get In Touch</h3>
-    <ul>
-      <li>{icon("pin")}<span>{ADDRESS}</span></li>
-      <li>{icon("phone")}<a href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a></li>
-      <li>{icon("mail")}<a href="mailto:{EMAIL_INFO}">{EMAIL_INFO}</a></li>
-    </ul>
+  <div class="drawer__cta">
     <button class="btn btn--primary btn--block" type="button" data-enquire="enquiry">Enquire Now {icon("arrow", "icon--arrow")}</button>
-    {social_links()}
   </div>
 </div>
 <div class="drawer-overlay"></div>
@@ -229,12 +222,12 @@ def lead_form(prefix, default_type="Enquiry", in_modal=True, submit_label="Submi
       <div class="phone-input"><span>+91</span><input id="{prefix}-phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="10-digit mobile" maxlength="14" required></div>
       <span class="field__error" role="alert"></span>
     </div>
-    <div class="field">
+    <div class="field optional-field">
       <label for="{prefix}-email">Email</label>
       <input id="{prefix}-email" name="email" type="email" autocomplete="email" placeholder="you@example.com">
       <span class="field__error" role="alert"></span>
     </div>
-    <div class="field full">
+    <div class="field full optional-field">
       <label for="{prefix}-project">Interested in</label>
       <select id="{prefix}-project" name="project">
         <option value="{LUXORA}">Vatika Luxora — Kasara (Ongoing)</option>
@@ -247,11 +240,11 @@ def lead_form(prefix, default_type="Enquiry", in_modal=True, submit_label="Submi
       <input id="{prefix}-date" name="preferred_date" type="date">
       <span class="field__error" role="alert"></span>
     </div>
-    <div class="field full">
+    <div class="field full optional-field">
       <label for="{prefix}-message">Message</label>
       <textarea id="{prefix}-message" name="message" rows="{msg_rows}" placeholder="Plot size, budget or any questions (optional)"></textarea>
     </div>
-    <label class="check full">
+    <label class="check full optional-field">
       <input type="checkbox" name="consent" required checked>
       <span>I agree to be contacted by Vatika Estate via call, SMS, email or WhatsApp. See our <a href="privacy-policy.html" target="_blank">Privacy Policy</a>.</span>
     </label>
@@ -259,6 +252,7 @@ def lead_form(prefix, default_type="Enquiry", in_modal=True, submit_label="Submi
   <button class="btn btn--primary btn--block" type="submit" style="margin-top:18px"><span class="btn__label">{submit_label}</span></button>
   <div class="form-alert form-alert--error" role="alert"></div>
   <p class="form-note">{icon("shield")} Your details are safe with us. No spam.</p>
+  <p class="consent-mini">By submitting, you agree to be contacted as per our <a href="privacy-policy.html" target="_blank">Privacy Policy</a>.</p>
 </form>
 <div class="form-success" role="status" aria-live="polite">
   <div class="form-success__icon">{icon("check")}</div>
@@ -354,13 +348,11 @@ def footer():
   </div>
 </footer>
 
-<a class="float-wa" href="{WA_LINK}" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">{icon("wa")}<span class="float-wa__tip">Chat on WhatsApp</span></a>
+<div class="float-actions">
+  <a class="float-btn float-call" href="tel:{PHONE_TEL}" aria-label="Call Vatika Estate">{icon("phone")}</a>
+  <a class="float-btn float-wa" href="{WA_LINK}" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">{icon("wa")}<span class="float-wa__tip">Chat on WhatsApp</span></a>
+</div>
 <button class="to-top" type="button" aria-label="Back to top">{icon("up")}</button>
-<nav class="mobile-bar" aria-label="Quick contact">
-  <a href="tel:{PHONE_TEL}">{icon("phone")} Call</a>
-  <a class="mobile-bar__wa" href="{WA_LINK}" target="_blank" rel="noopener">{icon("wa")} WhatsApp</a>
-  <button class="mobile-bar__cta" type="button" data-enquire="enquiry">Enquire Now</button>
-</nav>
 
 <div class="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Image viewer">
   <span class="lightbox__count"></span>

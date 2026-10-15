@@ -239,17 +239,19 @@
   var modal = $("#lead-modal");
   var lastFocus = null;
   var MODES = {
-    enquiry: { title: "Enquire Now", text: "Share your details and our team will get in touch with you. You'll also get access to the project brochure.", submit: "Submit Enquiry", type: "Enquiry" },
-    brochure: { title: "Get the Brochure", text: "Fill in your details to get the Vatika Luxora brochure.", submit: "Get Brochure", type: "Brochure Request" },
-    visit: { title: "Request a Site Visit", text: "Pick a date that suits you and our team will get in touch to plan your visit.", submit: "Request Visit", type: "Site Visit Request" },
-    auto: { title: "Enquire Now", text: "Interested in agricultural land in Shahapur & Kasara? Share your details and get the Vatika Luxora brochure.", submit: "Get Brochure", type: "Popup Lead" }
+    enquiry: { title: "Enquire Now", text: "Share your details and our team will get in touch with you. You'll also get access to the project brochure.", submit: "Submit Enquiry", type: "Enquiry", short: "Share your details and we'll call you back." },
+    brochure: { title: "Get the Brochure", text: "Fill in your details to get the Vatika Luxora brochure.", submit: "Get Brochure", type: "Brochure Request", short: "Share your details to get the brochure." },
+    visit: { title: "Request a Site Visit", text: "Pick a date that suits you and our team will get in touch to plan your visit.", submit: "Request Visit", type: "Site Visit Request", short: "Pick a date and we'll plan your visit." },
+    auto: { title: "Enquire Now", text: "Interested in agricultural land in Shahapur & Kasara? Share your details and get the Vatika Luxora brochure.", submit: "Get Brochure", type: "Popup Lead", short: "Share your details to get the Vatika Luxora brochure." }
   };
 
   function setMode(mode, project) {
     var m = MODES[mode] || MODES.enquiry;
     modal.setAttribute("data-mode", mode);
     $("#lead-modal-title").textContent = m.title;
-    $("#lead-modal-text").textContent = m.text;
+    // Phones get the compact popup (name + mobile), so use the one-line description there
+    var compact = window.matchMedia("(max-width: 680px)").matches;
+    $("#lead-modal-text").textContent = compact && m.short ? m.short : m.text;
     var form = $("form", modal);
     $(".btn__label", form).textContent = m.submit;
     form.querySelector('[name="form_type"]').value = m.type;

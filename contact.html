@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=d871ac9d">
+<link rel="stylesheet" href="assets/css/style.css?v=77413d4a">
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "RealEstateAgent", "name": "Vatika Estate", "url": "https://vatikaestate.co.in/", "logo": "https://vatikaestate.co.in/assets/img/favicon-512.png", "image": "https://vatikaestate.co.in/assets/img/vatika-estate-og-image.jpg", "description": "Premium agricultural land and farm plots for sale in Shahapur & Kasara, Maharashtra.", "telephone": "+918356901661", "email": "info@vatikaestate.co.in", "address": {"@type": "PostalAddress", "streetAddress": "Office No. 1203, 12th Floor, Centrum IT Park, Plot No. C-8, Wagle Estate Road", "addressLocality": "Thane West", "addressRegion": "Maharashtra", "addressCountry": "IN"}, "areaServed": ["Shahapur", "Kasara", "Thane", "Mumbai"], "sameAs": ["https://www.facebook.com/vatikaestate.co", "https://www.instagram.com/vatikaestate/", "https://in.linkedin.com/company/vatika-estate"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://vatikaestate.co.in/"}, {"@type": "ListItem", "position": 2, "name": "Contact", "item": "https://vatikaestate.co.in/contact.html"}]}</script>
@@ -133,15 +133,8 @@
     <li><a href="gallery.html">Gallery</a></li>
     <li><a href="contact.html" aria-current="page">Contact Us</a></li>
   </ul>
-  <div class="drawer__contact">
-    <h3>Get In Touch</h3>
-    <ul>
-      <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-pin"></use></svg><span>Office No. 1203, 12th Floor, Centrum IT Park, Plot No. C-8, Wagle Estate Road (near Satkar Hotel), Thane West, Maharashtra</span></li>
-      <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-phone"></use></svg><a href="tel:+918356901661">+91 83569 01661</a></li>
-      <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-mail"></use></svg><a href="mailto:info@vatikaestate.co.in">info@vatikaestate.co.in</a></li>
-    </ul>
+  <div class="drawer__cta">
     <button class="btn btn--primary btn--block" type="button" data-enquire="enquiry">Enquire Now <svg class="icon icon--arrow" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></button>
-    <div class="social"><a href="https://www.facebook.com/vatikaestate.co" target="_blank" rel="noopener" aria-label="Vatika Estate on Facebook"><svg class="icon icon--fill" aria-hidden="true" focusable="false"><use href="#i-fb"></use></svg></a><a href="https://www.instagram.com/vatikaestate/" target="_blank" rel="noopener" aria-label="Vatika Estate on Instagram"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-ig"></use></svg></a><a href="https://in.linkedin.com/company/vatika-estate" target="_blank" rel="noopener" aria-label="Vatika Estate on LinkedIn"><svg class="icon icon--fill" aria-hidden="true" focusable="false"><use href="#i-li"></use></svg></a></div>
   </div>
 </div>
 <div class="drawer-overlay"></div>
@@ -186,12 +179,12 @@
       <div class="phone-input"><span>+91</span><input id="c-phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="10-digit mobile" maxlength="14" required></div>
       <span class="field__error" role="alert"></span>
     </div>
-    <div class="field">
+    <div class="field optional-field">
       <label for="c-email">Email</label>
       <input id="c-email" name="email" type="email" autocomplete="email" placeholder="you@example.com">
       <span class="field__error" role="alert"></span>
     </div>
-    <div class="field full">
+    <div class="field full optional-field">
       <label for="c-project">Interested in</label>
       <select id="c-project" name="project">
         <option value="Vatika Luxora (Ongoing)">Vatika Luxora — Kasara (Ongoing)</option>
@@ -204,11 +197,11 @@
       <input id="c-date" name="preferred_date" type="date">
       <span class="field__error" role="alert"></span>
     </div>
-    <div class="field full">
+    <div class="field full optional-field">
       <label for="c-message">Message</label>
       <textarea id="c-message" name="message" rows="4" placeholder="Plot size, budget or any questions (optional)"></textarea>
     </div>
-    <label class="check full">
+    <label class="check full optional-field">
       <input type="checkbox" name="consent" required checked>
       <span>I agree to be contacted by Vatika Estate via call, SMS, email or WhatsApp. See our <a href="privacy-policy.html" target="_blank">Privacy Policy</a>.</span>
     </label>
@@ -216,6 +209,7 @@
   <button class="btn btn--primary btn--block" type="submit" style="margin-top:18px"><span class="btn__label">Send Message</span></button>
   <div class="form-alert form-alert--error" role="alert"></div>
   <p class="form-note"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-shield"></use></svg> Your details are safe with us. No spam.</p>
+  <p class="consent-mini">By submitting, you agree to be contacted as per our <a href="privacy-policy.html" target="_blank">Privacy Policy</a>.</p>
 </form>
 <div class="form-success" role="status" aria-live="polite">
   <div class="form-success__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg></div>
@@ -291,13 +285,11 @@
   </div>
 </footer>
 
-<a class="float-wa" href="https://wa.me/918356901661?text=Hi%20Vatika%20Estate%2C%20I%27m%20interested%20in%20your%20agricultural%20land%20projects." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-wa"></use></svg><span class="float-wa__tip">Chat on WhatsApp</span></a>
+<div class="float-actions">
+  <a class="float-btn float-call" href="tel:+918356901661" aria-label="Call Vatika Estate"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-phone"></use></svg></a>
+  <a class="float-btn float-wa" href="https://wa.me/918356901661?text=Hi%20Vatika%20Estate%2C%20I%27m%20interested%20in%20your%20agricultural%20land%20projects." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-wa"></use></svg><span class="float-wa__tip">Chat on WhatsApp</span></a>
+</div>
 <button class="to-top" type="button" aria-label="Back to top"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-up"></use></svg></button>
-<nav class="mobile-bar" aria-label="Quick contact">
-  <a href="tel:+918356901661"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-phone"></use></svg> Call</a>
-  <a class="mobile-bar__wa" href="https://wa.me/918356901661?text=Hi%20Vatika%20Estate%2C%20I%27m%20interested%20in%20your%20agricultural%20land%20projects." target="_blank" rel="noopener"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-wa"></use></svg> WhatsApp</a>
-  <button class="mobile-bar__cta" type="button" data-enquire="enquiry">Enquire Now</button>
-</nav>
 
 <div class="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Image viewer">
   <span class="lightbox__count"></span>
@@ -341,12 +333,12 @@
       <div class="phone-input"><span>+91</span><input id="m-phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="10-digit mobile" maxlength="14" required></div>
       <span class="field__error" role="alert"></span>
     </div>
-    <div class="field">
+    <div class="field optional-field">
       <label for="m-email">Email</label>
       <input id="m-email" name="email" type="email" autocomplete="email" placeholder="you@example.com">
       <span class="field__error" role="alert"></span>
     </div>
-    <div class="field full">
+    <div class="field full optional-field">
       <label for="m-project">Interested in</label>
       <select id="m-project" name="project">
         <option value="Vatika Luxora (Ongoing)">Vatika Luxora — Kasara (Ongoing)</option>
@@ -359,11 +351,11 @@
       <input id="m-date" name="preferred_date" type="date">
       <span class="field__error" role="alert"></span>
     </div>
-    <div class="field full">
+    <div class="field full optional-field">
       <label for="m-message">Message</label>
       <textarea id="m-message" name="message" rows="3" placeholder="Plot size, budget or any questions (optional)"></textarea>
     </div>
-    <label class="check full">
+    <label class="check full optional-field">
       <input type="checkbox" name="consent" required checked>
       <span>I agree to be contacted by Vatika Estate via call, SMS, email or WhatsApp. See our <a href="privacy-policy.html" target="_blank">Privacy Policy</a>.</span>
     </label>
@@ -371,6 +363,7 @@
   <button class="btn btn--primary btn--block" type="submit" style="margin-top:18px"><span class="btn__label">Submit Enquiry</span></button>
   <div class="form-alert form-alert--error" role="alert"></div>
   <p class="form-note"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-shield"></use></svg> Your details are safe with us. No spam.</p>
+  <p class="consent-mini">By submitting, you agree to be contacted as per our <a href="privacy-policy.html" target="_blank">Privacy Policy</a>.</p>
 </form>
 <div class="form-success" role="status" aria-live="polite">
   <div class="form-success__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg></div>
@@ -384,6 +377,6 @@
     </div>
   </div>
 </div>
-<script src="assets/js/main.js?v=826b9b7b" defer></script>
+<script src="assets/js/main.js?v=c8423a8b" defer></script>
 </body>
 </html>
