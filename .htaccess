@@ -1,0 +1,47 @@
+# Vatika Estate — Apache / Hostinger configuration
+Options -Indexes
+ServerSignature Off
+ErrorDocument 404 /404.html
+
+<IfModule mod_headers.c>
+  Header always unset X-Powered-By
+  Header unset X-Powered-By
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  <FilesMatch "\.(webp|png|jpg|svg|woff2|css|js)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "public, max-age=600"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_mime.c>
+  AddType image/webp .webp
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript image/svg+xml application/xml text/plain
+</IfModule>
+
+# Block the build sources from being served
+RedirectMatch 404 ^/_build(/.*)?$
+RedirectMatch 404 ^/\.claude(/.*)?$
+RedirectMatch 404 \.md$
+
+# 301 redirects from the old WordPress URLs (keeps Google rankings)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^about-us/?$ /about.html [R=301,L]
+  RewriteRule ^contact/?$ /contact.html [R=301,L]
+  RewriteRule ^team/?$ /about.html [R=301,L]
+  RewriteRule ^property-listing/?$ /projects.html [R=301,L]
+  RewriteRule ^all-projects/vatika-luxora-ongoing/?$ /vatika-luxora.html [R=301,L]
+  RewriteRule ^all-projects/?$ /projects.html [R=301,L]
+  RewriteRule ^directory/.*$ /projects.html [R=301,L]
+  RewriteRule ^wp-content/uploads/2026/09/Final-Vatika-Luxora-Brochure\.pdf$ /vatika-luxora.html [R=301,L]
+  RewriteRule ^(hello-world|discover-unparalleled-expertise-in-market(-2)?|enrich-your-mind-envision-your-future-education-for-success|university-class-starting-soon-while-the-lovely-valley-team-work|emphasizes-the-importance-of-continuous-learning-and-intellectual)/?$ / [R=301,L]
+  RewriteRule ^(wp-admin|wp-login\.php|xmlrpc\.php|wp-json)(/.*)?$ - [R=404,L]
+</IfModule>

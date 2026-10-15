@@ -1,0 +1,30 @@
+{
+  "cleanUrls": false,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/about-us", "destination": "/about.html", "permanent": true },
+    { "source": "/about-us/", "destination": "/about.html", "permanent": true },
+    { "source": "/contact/", "destination": "/contact.html", "permanent": true },
+    { "source": "/contact", "destination": "/contact.html", "permanent": true },
+    { "source": "/team/:path*", "destination": "/about.html", "permanent": true },
+    { "source": "/property-listing/:path*", "destination": "/projects.html", "permanent": true },
+    { "source": "/all-projects/vatika-luxora-ongoing/:path*", "destination": "/vatika-luxora.html", "permanent": true },
+    { "source": "/all-projects/:path*", "destination": "/projects.html", "permanent": true },
+    { "source": "/directory/:path*", "destination": "/projects.html", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=2592000" }]
+    }
+  ]
+}
